@@ -15,7 +15,7 @@ from pygame import mixer
 
 #inicio del juego 
 pygame.int()
-
+##
 # se crea el fondo de pantalla
 screen = pygame.display.set_mode((1000,800))
 
