@@ -110,3 +110,5 @@ for event in pygame.event.get():
                 playerX_change=-5
             if event.key==pygame.K_RIGHT:
                 playerX_change=5 
+
+
