@@ -20,19 +20,19 @@ pygame.int()
 screen = pygame.display.set_mode((1000,800))
 
 #fondo de pantalla
-background  = pygame.image.load('/home/pc03/Documentos/Juego 1/fondo.png')
+background  = pygame.image.load('fondo.png')
 
 # sonido de fondo
-mixer.music.load('/home/pc03/Documentos/Juego 1/UTF-8background.wav')
+mixer.music.load('UTF-8background.wav')
 mixer.music.play(-1)
 
 # titulo y icono
 pygame.display.set_caption("Perdidos en el fondo del mar")
-icon = pygame.image.load('/home/pc03/Documentos/Juego 1/Enemigo1-removebg-preview.png')
+icon = pygame.image.load('Enemigo1-removebg-preview.png')
 pygame.display.set_icon(icon)
 
 #jugador
-PlayerImg=pygame.image.load('/home/pc03/Documentos/Juego 1/nave-transformed.png')
+PlayerImg=pygame.image.load('nave-transformed.png')
 playerX=370
 player=480
 playerX_change=0
@@ -46,7 +46,7 @@ enemyY_change=[]
 num_of_enemies= 20
 
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('/home/pc03/Documentos/Juego 1/enemigo2.png'))
+    enemyImg.append(pygame.image.load('enemigo2.png'))
     enemyX.append(random.randint(0,736))
     enemyY.append(random.randint(50,150))
     enemyX_change.append(4)
@@ -54,7 +54,7 @@ for i in range(num_of_enemies):
 
     #tridente 
 
-    armaImg= pygame.image.load('/home/pc03/Documentos/Juego 1/bala-removebg-preview.png')
+    armaImg= pygame.image.load('bala-removebg-preview.png')
     armaX=0
     armaY=480
     armaX_change=0
@@ -64,14 +64,14 @@ for i in range(num_of_enemies):
 #puntaje 
 
 score_value=0
-font =pygame.font.Font('/home/pc03/Documentos/Juego 1/autography(1).zip',32)
+font =pygame.font.Font('autography(1).zip',32)
 
 
 textX=10
 textY=10
 
 #juego terminado
-over_font =pygame.font.Font('/home/pc03/Documentos/Juego 1/beauty_sunny.zip' ,64)
+over_font =pygame.font.Font('beauty_sunny.zip' ,64)
 
 def show_puntaje(x,y):
     score=font.render("Score : "+str(score_value).true,(255,255,255))
@@ -110,3 +110,19 @@ for event in pygame.event.get():
                 playerX_change=-5
             if event.key==pygame.K_RIGHT:
                 playerX_change=5 
+
+     # RGB = Red, Green, Blue
+     screen.fill((0, 0, 0))
+     # Backgroud Image
+     screen.blit(background, (0,0))
+     for event in pygame.event.get():
+         if event.type == pygame.QUIT:
+             running = False
+
+         # if keystroke is pressed check whether its right or left
+         if event.type == pygame.KEYDOWN:
+             if event.key == pygame.K_LEFT:
+                playerX_change = -5
+            if event.key == pygame.K_LEFT:
+                
+
